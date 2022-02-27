@@ -1,0 +1,42 @@
+/**index.wxss**/
+@import "../../wxss/index.wxss";
+
+.text-blue {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.btn-blue {
+  margin-top: 100px;
+}
+
+.dish-view{
+  text-align: center;
+  font-size: 50rpx;
+  margin-top: 25%;
+}
+
+
+.footer-nav{
+  margin: 100rpx 0rpx 30rpx 0rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.footer-view{
+  color: #23a1f5;
+  display: inline-block;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+  padding-bottom: 20rpx;
+}
+
+
+.footer-plus{
+  color: gray;
+  font-size: 22rpx;
+  padding-top: 60rpx;
+}

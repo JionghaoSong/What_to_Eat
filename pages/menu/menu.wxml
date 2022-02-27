@@ -1,0 +1,63 @@
+<!-- pages/map/map.wxml -->
+<import src="../../wxss/dist/loadmore/index.wxml" />
+<import src="../../wxss/dist/capsule/index.wxml" />
+<import src="../../wxss/dist/switch/index.wxml" />
+
+<view class="container">
+  <view class="zan-panel-title zan-panel-title-custom">
+    菜单
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--default zan-pull-right zan-btn-custom"
+      bindtap="setDefault">
+      默认
+    </button>
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--primary zan-pull-right zan-btn-custom"
+      bindtap="showAdd">
+      添加
+    </button>
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--warn zan-pull-right zan-btn-custom"
+      bindtap="save"
+      wx:if='{{ edited }}'>
+      保存修改
+    </button>
+  </view>
+  <template is="zan-loadmore" data="{{ loading }}" />
+  <block wx:for="{{dishesObjects}}" wx:key='{{index}}' wx:for-item="dish">
+    <view data-id="{{index}}" data-index="{{index}}" class="zan-panel" bindtap='test'>
+      <view class="zan-cell  zan-cell--access">
+        <view class="zan-cell__bd">
+          <view class="zan-cell__text" bindtap='test2'>
+            {{index + 1}}. {{dish.name}}
+          </view>
+          <view class="zan-cell__desc">
+            <view>
+               <template wx:if="{{dish.breakfast}}" is="capsule" data="{{  rightText: '早餐', type: 'danger' }}" />
+              <template wx:if="{{dish.lunch}}" is="capsule" data="{{ leftText: '', rightText: '午餐', color: '#9966CC' }}" />
+              <template wx:if="{{dish.dinner}}" is="capsule" data="{{ leftText: '', rightText: '晚餐', color: '#38f' }}" />
+              <template wx:if="{{dish.night}}" is="capsule" data="{{ leftText: '', rightText: '夜宵', color: '#FF6633' }}" /> 
+            </view>
+            <view>
+            </view>
+          </view>
+        </view>
+        <template is="zan-switch" data="{{ checked:dish.on,componentId:index }}"/>
+        <!-- <view class="zan-cell__ft zan-cell__ft-custom">编辑</view> -->
+        <button 
+          data-did='{{index}}'
+          class="zan-btn zan-btn--mini zan-btn--danger zan-pull-right zan-btn-custom"
+          bindtap="deleteDish"
+          componentId="{{index}}">
+          删除
+        </button>
+      </view>
+    </view>
+  </block>
+
+  <view class="zan-panel" wx:if='{{ edited }}'>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='save'>修改过记得点我保存哦!</button>
+    </view>
+  </view>
+</view>

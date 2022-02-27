@@ -1,0 +1,39 @@
+<!--pages/about/about.wxml-->
+<import src="../../wxss/dist/capsule/index.wxml" />
+
+<view class='container'>
+  <view class="zan-panel-title"></view>
+  <view class="zan-panel panel-custom  zan-panel--without-border">
+    <view class='p-custom'>此小程序是为了解决历史难题：今天吃什么</view>
+    <view class='p-custom'>可以做到自由增删改查</view>
+    <view class='p-custom'>数据统计中用饼状图展现历史订单</view>
+  </view>
+  <view class="zan-panel-title">关于作者</view>
+  <view class="zan-panel panel-author zan-panel--without-border">
+    <view class="userinfo">
+      <block>
+        <image class="userinfo-avatar" src="./img/avatar.jpeg" background-size="cover"></image>
+        <text class="userinfo-nickname">Jionghao Song</text>
+        <text class="author-info">千禧年宝宝，软件工程专业，喜欢AC米兰</text>
+        <view class="zan-row">
+            <view class="zan-col zan-col-4"> 
+            <!-- 对于位置的占位 -->
+              <image class='icon' src="./img/background" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-5" data-index="0" bindtap='copy'>
+              <image class='icon' src="./img/icon/github.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-5" data-index="1" bindtap='copy'>
+              <image class='icon' src="./img/icon/icon_QQ.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-5" data-index="2" bindtap='copy'>
+              <image class='icon' src="./img/icon/gmail.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="" background-size="cover"></image>
+            </view>
+        </view>
+      </block>
+    </view> 
+  </view>
+</view>
